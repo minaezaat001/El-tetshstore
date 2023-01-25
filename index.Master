@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"   CodeBehind="index.master.cs" Inherits="store.index" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+    <title>El-Tetsh Store</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+      	<section id="banner" data-video="" />
+        
+                     
+					<div class="inner">
+                        &nbsp;<img src="images/logo.jpg"><br>
+                        
+						<header /><br />
+                        
+ 
+    
+<div class="box">
+<h1>El-Tetsh Store</h1>
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+&nbsp;<br>
+
+
+
+</div> 
+
+						</header>
+					</div><br />
+                    
+				</section>
+                <footer class="footer12">
+                    <span>Copyright © 2018 Pnetworkers</span> 
+                </footer> 
+		
+        
+    </div>
+    </form>
+</body>
+</html>

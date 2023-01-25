@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="store._0_admin.Admin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="assets/css/main.css" rel="stylesheet" type="text/css" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    </head>
+<body>
+    <form id="form1" runat="server">
+<div class="topnav">
+  <a href="product.aspx"><strong><em>Products</em></strong></a>
+  <div class="dropdown">
+    <button class="dropbtn"><strong><em>Logins</em></strong> 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="Login-today.aspx">Today</a>
+      <a href="Login-name.aspx">By Name</a>
+      <a href="Login-date.aspx">By date</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn"><strong><em>Orders</em></strong> 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+     <a href="Comfirmed.aspx">Comfirmed</a>
+      <a href="non-com-orders.aspx">Non-comfirmed</a>
+      <a href="rej-orders.aspx">Rejected</a>
+    </div>
+  </div> 
+  <a href="Customers.aspx" ><strong><em>Customers</em></strong></a>
+  <a href="users.aspx" ><strong><em>Users</em></strong></a>
+    <br />
+    <br />
+</div>
+
+ 
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+
+ 
+    </form>
+   
+     
+
+</body>
+</html>

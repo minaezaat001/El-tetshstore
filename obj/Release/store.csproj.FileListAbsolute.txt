@@ -1,0 +1,12 @@
+D:\store\bin\store.dll
+D:\store\bin\store.pdb
+D:\store\obj\Release\store.dll
+D:\store\obj\Release\store.pdb
+D:\store\obj\Release\store.csprojResolveAssemblyReference.cache
+D:\open source\El-tetshstore\bin\store.dll.config
+D:\open source\El-tetshstore\bin\store.dll
+D:\open source\El-tetshstore\bin\store.pdb
+D:\open source\El-tetshstore\obj\Release\store.csprojAssemblyReference.cache
+D:\open source\El-tetshstore\obj\Release\store.csproj.CoreCompileInputs.cache
+D:\open source\El-tetshstore\obj\Release\store.dll
+D:\open source\El-tetshstore\obj\Release\store.pdb

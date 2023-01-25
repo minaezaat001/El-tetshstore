@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ordertaker.master.cs" Inherits="store.order_taker.ordertaker" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<link href="assets/css/main.css" rel="stylesheet" type="text/css" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="topnav">
+  <a href="#home"><strong><em>New Order</em></strong></a>
+  <a href="#news"><strong><em>All Orders</em></strong></a>
+ 
+    <br />
+    <br />
+</div>
+
+          <div class="footer">
+  <p> <span>Copyright © 2018 Pnetworkers</span> </p>
+</div>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+
+    </form>
+          </body>
+</html>

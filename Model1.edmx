@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="storeModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="storeModelStoreContainer">
+          <EntitySet Name="category" EntityType="storeModel.Store.category" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Logins" EntityType="storeModel.Store.Logins" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="orders" EntityType="storeModel.Store.orders" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="product" EntityType="storeModel.Store.product" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="users" EntityType="storeModel.Store.users" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="id_cat" />
+          </Key>
+          <Property Name="id_cat" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="decription" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Logins">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" />
+          <Property Name="time" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="orders">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="cust_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="cust_adress" Type="nvarchar" MaxLength="50" />
+          <Property Name="mob1" Type="nvarchar" MaxLength="50" />
+          <Property Name="mob2" Type="nvarchar" MaxLength="50" />
+          <Property Name="product_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="size" Type="nvarchar" MaxLength="50" />
+          <Property Name="trans" Type="nvarchar" MaxLength="50" />
+          <Property Name="notes" Type="nvarchar" MaxLength="50" />
+          <Property Name="total" Type="int" />
+          <Property Name="orderdate" Type="smalldatetime" />
+          <Property Name="comfirm" Type="nvarchar" MaxLength="50" />
+          <Property Name="agent_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="ftotal" Type="int" />
+          <Property Name="transcost" Type="int" />
+          <Property Name="note2" Type="nvarchar" MaxLength="50" />
+          <Property Name="com_date" Type="smalldatetime" />
+          <Property Name="count" Type="int" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="id_product" />
+          </Key>
+          <Property Name="id_product" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="qut" Type="int" />
+          <Property Name="price" Type="decimal" />
+          <Property Name="id_cat" Type="int" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" />
+          <Property Name="npassword" Type="nvarchar" MaxLength="50" />
+          <Property Name="phone" Type="nchar" MaxLength="50" />
+          <Property Name="kind" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="storeModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="storeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="categories" EntityType="storeModel.category" />
+          <EntitySet Name="products" EntityType="storeModel.product" />
+          <EntitySet Name="users" EntityType="storeModel.user" />
+          <EntitySet Name="orders" EntityType="storeModel.order" />
+          <EntitySet Name="Logins" EntityType="storeModel.Login" />
+        </EntityContainer>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="id_cat" />
+          </Key>
+          <Property Name="id_cat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="decription" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="id_product" />
+          </Key>
+          <Property Name="id_product" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="qut" Type="Int32" />
+          <Property Name="price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="id_cat" Type="Int32" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="username" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="npassword" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="phone" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="kind" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="order">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="cust_name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="cust_adress" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="mob1" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="mob2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="product_name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="size" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="trans" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="notes" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="total" />
+          <Property Type="DateTime" Name="orderdate" />
+          <Property Type="String" Name="comfirm" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="agent_name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ftotal" />
+          <Property Type="Int32" Name="transcost" />
+          <Property Type="String" Name="note2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="com_date" />
+          <Property Type="Int32" Name="count" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="username" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="time" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="storeModelStoreContainer" CdmEntityContainer="storeEntities">
+          <EntitySetMapping Name="categories">
+            <EntityTypeMapping TypeName="storeModel.category">
+              <MappingFragment StoreEntitySet="category">
+                <ScalarProperty Name="id_cat" ColumnName="id_cat" />
+                <ScalarProperty Name="decription" ColumnName="decription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="storeModel.product">
+              <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="id_product" ColumnName="id_product" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="qut" ColumnName="qut" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="id_cat" ColumnName="id_cat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="storeModel.user">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="npassword" ColumnName="npassword" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="kind" ColumnName="kind" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orders">
+            <EntityTypeMapping TypeName="storeModel.order">
+              <MappingFragment StoreEntitySet="orders">
+                <ScalarProperty Name="count" ColumnName="count" />
+                <ScalarProperty Name="com_date" ColumnName="com_date" />
+                <ScalarProperty Name="note2" ColumnName="note2" />
+                <ScalarProperty Name="orderdate" ColumnName="orderdate" />
+                <ScalarProperty Name="transcost" ColumnName="transcost" />
+                <ScalarProperty Name="ftotal" ColumnName="ftotal" />
+                <ScalarProperty Name="agent_name" ColumnName="agent_name" />
+                <ScalarProperty Name="comfirm" ColumnName="comfirm" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="trans" ColumnName="trans" />
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="product_name" ColumnName="product_name" />
+                <ScalarProperty Name="mob2" ColumnName="mob2" />
+                <ScalarProperty Name="mob1" ColumnName="mob1" />
+                <ScalarProperty Name="cust_adress" ColumnName="cust_adress" />
+                <ScalarProperty Name="cust_name" ColumnName="cust_name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="storeModel.Login">
+              <MappingFragment StoreEntitySet="Logins">
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1">
+        <EntityTypeShape EntityType="storeModel.category" Width="1.5" PointX="0.75" PointY="0.75" Height="1.4033821614583331" IsExpanded="true" />
+        <EntityTypeShape EntityType="storeModel.product" Width="1.5" PointX="4.75" PointY="0.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="storeModel.user" Width="1.5" PointX="4.75" PointY="3.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="storeModel.order" Width="1.5" PointX="0.75" PointY="3.75" Height="3.5186979166666674" />
+        <EntityTypeShape EntityType="storeModel.Login" Width="1.5" PointX="3.375" PointY="6.75" Height="1.5956835937499996" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

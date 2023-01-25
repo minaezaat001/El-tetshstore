@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="storeModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="storeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="categories" EntityType="storeModel.category" />
+    <EntitySet Name="products" EntityType="storeModel.product" />
+    <EntitySet Name="users" EntityType="storeModel.user" />
+    <EntitySet Name="orders" EntityType="storeModel.order" />
+    <EntitySet Name="Logins" EntityType="storeModel.Login" />
+  </EntityContainer>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="id_cat" />
+    </Key>
+    <Property Name="id_cat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="decription" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="id_product" />
+    </Key>
+    <Property Name="id_product" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="qut" Type="Int32" />
+    <Property Name="price" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="id_cat" Type="Int32" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="username" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="npassword" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="phone" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="kind" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="cust_name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="cust_adress" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="mob1" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="mob2" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="product_name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="size" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="trans" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="notes" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="total" />
+    <Property Type="DateTime" Name="orderdate" />
+    <Property Type="String" Name="comfirm" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="agent_name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ftotal" />
+    <Property Type="Int32" Name="transcost" />
+    <Property Type="String" Name="note2" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="com_date" />
+    <Property Type="Int32" Name="count" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="username" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="time" />
+  </EntityType>
+</Schema>
